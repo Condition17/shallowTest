@@ -36,8 +36,11 @@ set :repo_url, 'git@github.com:Condition17/shallowTest.git'
 # set :keep_releases, 5
 # set :rails_env, "production"
 
-# set :ssh_options, { :forward_agent => true, :port => 22 }
-# default_run_options[:pty] = true
+
+set :ssh_options, { :forward_agent => true, :port => 22 }
+default_run_options[:pty] = true
+
+server "89.36.26.172", :app, :web, :db, :primary => true
 
 # Default value for :linked_files is []
  set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
