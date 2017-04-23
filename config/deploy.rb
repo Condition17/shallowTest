@@ -39,8 +39,11 @@ set :branch, "master"
 # set :keep_releases, 5
 # set :rails_env, "production"
 
-# set :ssh_options, { :forward_agent => true, :port => 22 }
-# default_run_options[:pty] = true
+
+set :ssh_options, { :forward_agent => true, :port => 22 }
+default_run_options[:pty] = true
+
+server "89.36.26.172", :app, :web, :db, :primary => true
 
 namespace :deploy do
 
